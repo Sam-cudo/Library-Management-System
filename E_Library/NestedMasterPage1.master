@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="NestedMasterPage1.master.cs" Inherits="E_Library.NestedMasterPage1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "230px";
+            document.getElementById("main").style.marginLeft = "230px";
+            document.getElementById('<%=ToggleOpen.ClientID %>').style.display = 'none';
+            document.getElementById('<%=ToggleClose.ClientID %>').style.display = 'inherit';
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById('<%=ToggleOpen.ClientID %>').style.display = 'inherit';
+            document.getElementById('<%=ToggleClose.ClientID %>').style.display = 'none';
+        }
+    </script>
+    <style>
+
+        .sidebar {
+            height: 100%;
+            width: 230px;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            background-color: #009688;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 50px;
+        }
+
+            .sidebar h2{
+                padding: 6px 6px 6px 30px;
+                text-decoration: none;
+                font-size: 26px;
+                color: #fff;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .sidebar .nav-link {
+                padding: 6px 6px 6px 30px;
+                text-decoration: none;
+                font-size: 18px;
+                color: #fff;
+                display: block;
+                transition: 0.3s;
+            }
+
+                .sidebar .nav-link:hover {
+                    color: yellow;
+                }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #009688;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            display: none;
+        }
+
+        .closebtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #009688;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            display: inherit;
+        }
+
+            .openbtn:hover, .closebtn:hover {
+                background-color: grey;
+            }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+            margin-left: 230px;
+        }
+
+        @media screen and (max-width: 992px) {
+            .sidebar {
+                width: 0;
+            }
+
+            #main {
+                margin-left: 0;
+            }
+
+            .openbtn {
+                display:inherit;
+            }
+
+            .closebtn {
+                display:none;
+            }
+
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="ChildHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="d-flex" style="overflow-y:scroll; background-color">
+        <div id="mySidebar" class="sidebar">
+            <center>
+                <img src="imgs/admin-panel.png" width="100" height="100"/>
+            </center>
+            <h2>Admin Panel</h2>
+            <hr />
+            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" CausesValidation="False">Dashboard</asp:LinkButton>
+            <hr />
+            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" CausesValidation="False">Book Issuing</asp:LinkButton>
+            <hr />
+            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click" CausesValidation="False">Book Inventory</asp:LinkButton>
+            <hr />
+            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" CausesValidation="False">Author Management</asp:LinkButton>
+            <hr />
+            <asp:LinkButton class="nav-link" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click" CausesValidation="False">Member Management</asp:LinkButton>
+        </div>
+
+        <div id="main">
+            <asp:Button class="openbtn" ID="ToggleOpen" runat="server" Text="☰" OnClick="ToggleOpen_Click" CausesValidation="False"/>
+            <asp:Button class="closebtn" ID="ToggleClose" runat="server" Text="☰" OnClick="ToggleClose_Click" CausesValidation="False"/>
+        </div>
+        <!-- Admin Content Holder -->
+        <asp:ContentPlaceHolder ID="ChildContent1" runat="server">
+        </asp:ContentPlaceHolder>
+        <!-- Admin Content Holder -->
+
+    </div>
+</asp:Content>

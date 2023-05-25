@@ -1,0 +1,43 @@
+﻿#NAV {
+    background: #1a503e;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+
+.footerlinks {
+    color: #ffffff;
+    text-decoration: none !important;
+}
+
+    .footerlinks:hover {
+        color: #ffd800;
+    }
+
+#footer1 {
+    background: #1a503e;
+    height: 30px
+}
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+    background: #eeeeee;
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+    background: #009688;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #1a503e;
+    }
+

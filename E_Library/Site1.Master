@@ -1,0 +1,155 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="E_Library.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>E-Library</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/books.png" />
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <link href="datatables/CSS/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="bootstrap/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/customstylesheet.css" rel="stylesheet" />
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="datatables/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#AboutUs").click(function () {
+                $('#AboutUsModal').modal('show');
+            });
+        });
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" style="height:100%" runat="server">
+
+        <!-- Modals -->
+        <div>
+            <!-- About Us Modal -->
+            <div class="modal fade" id="AboutUsModal" tabindex="-1" role="dialog" aria-labelledby="ModalTitle" aria-hidden="true">
+                <div class="modal-dialog" style="background-color: #eeeeee">
+                    <div class="modal-content" style="background-color: #eeeeee">
+                        <div class="modal-header">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <center>
+                                            <h3 style="color: #009688">About LMS</h3>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 mx-auto">
+                                        <p>
+                                            National Digital Library of India (NDLI) is a virtual repository of learning resources which is not just a repository with search/browse facilities but provides a host of services for the learner community. 
+                                            It is sponsored and mentored by Ministry of Education, Government of India, through its National Mission on Education through Information and Communication Technology (NMEICT). 
+                                            Filtered and federated searching is employed to facilitate focused searching so that learners can find the right resource with least effort and in minimum time. 
+                                            NDLI provides user group-specific services such as Examination Preparatory for School and College students and job aspirants. Services for Researchers and general learners are also provided. 
+                                            It is built to provide support for all academic levels including researchers and life-long learners, all disciplines, all popular forms of access devices and differently-abled learners. 
+                                            It is designed to enable people to learn and prepare from best practices from all over the world and to facilitate researchers to perform inter-linked exploration from multiple sources. It is developed, operated and maintained from Indian Institute of Technology Kharagpur.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <center>
+                                            <button type="button" class="btn btn-success" data-dismiss="modal" aria-label="Close" Style="background-color: #009688">OK</button>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Modals -->
+
+        <!-- NavBar -->
+        <div id="NAV">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="home.aspx" style="color: white">
+                    <img src="imgs/logo.png" width="30" height="30" />
+                    E-Library
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="home.aspx" style="color: white">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" id="AboutUs" style="color: white; cursor: pointer">About Us</a>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" Style="color: white" OnClick="LinkButton4_Click" CausesValidation="False">View Books</asp:LinkButton>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" Style="color: white" OnClick="LinkButton1_Click" CausesValidation="False">User Login</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton6" runat="server" Style="color: white" OnClick="LinkButton6_Click" CausesValidation="False">Admin Login</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" Style="color: white" OnClick="LinkButton2_Click" CausesValidation="False">Sign Up</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" Style="color: white" Visible="False" CausesValidation="False" OnClick="LinkButton3_Click">Logout</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton5" runat="server" Style="color: white" Visible="False" CausesValidation="False" OnClick="LinkButton5_Click">Hello user</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- NavBar -->
+
+        <!-- Main Content Placeholder -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <!-- Main Content Placeholder -->
+        <br />
+        <br />
+        <!-- Footer -->
+        <div style="position: fixed; bottom: 0; width: 100%; z-index: 1;">
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p style="color: whitesmoke">&copy All right Reserved. <a class="footerlinks" href="#" target="_blank">Sam-Cudo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+    </form>
+</body>
+</html>
