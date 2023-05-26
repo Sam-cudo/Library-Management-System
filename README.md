@@ -54,3 +54,23 @@ Cloud integration, moving library data from a local database to the cloud may be
 Data addition, There are many potential additions to the data, including PDFs of textbooks and previous year's examinations, and recorded lectures of classes will be beneficial to any academic institution. 
 
 Feedback mechanism, To quickly identify users having any problems using this application, a feedback and complaint mechanism can also be added.
+
+
+## Database Snapshots (if someone wants to recreate the project)
+### E-LibraryDB 
+![image](https://github.com/Sam-cudo/Library-Management-System/assets/54752818/850b0378-ac07-4c59-b81d-fcb034b09442)
+
+### admin_login_tbl
+![image](https://github.com/Sam-cudo/Library-Management-System/assets/54752818/dc115457-fd9b-462f-a907-e5cca7bd28f4)
+
+### author_master_tbl
+![image](https://github.com/Sam-cudo/Library-Management-System/assets/54752818/1bf62882-3939-42ba-b17c-879dbdd5a119)
+
+### book_issue_tbl
+![image](https://github.com/Sam-cudo/Library-Management-System/assets/54752818/10b42a3a-8f4d-4482-b14f-025e2336d7fa)
+
+### book_master_tbl
+![image](https://github.com/Sam-cudo/Library-Management-System/assets/54752818/c967083d-0dbd-4ace-b31d-cbc517826942)
+
+### member_master_tbl
+![image](https://github.com/Sam-cudo/Library-Management-System/assets/54752818/ea9ef6b6-a497-4d27-a16f-a2f42105d61c)
